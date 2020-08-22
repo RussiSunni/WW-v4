@@ -15,7 +15,10 @@ public class AnimalFoodQuestionBank : SimpleQuestion
     private Sprite dogSprite,
                     horseSprite,
                     catSprite,
-                    rabbitSprite;
+                    rabbitSprite,
+                    frogSprite,
+                    lionSprite,
+                    tigerSprite;
 
     void Start()
     {
@@ -24,6 +27,9 @@ public class AnimalFoodQuestionBank : SimpleQuestion
         horseSprite = Resources.Load<Sprite>("Questions/Horse");
         catSprite = Resources.Load<Sprite>("Questions/Cat");
         rabbitSprite = Resources.Load<Sprite>("Questions/Rabbit");
+        frogSprite = Resources.Load<Sprite>("Questions/Frog");
+        lionSprite = Resources.Load<Sprite>("Questions/Lion");
+        tigerSprite = Resources.Load<Sprite>("Questions/Tiger");
 
         animalFood001 = new SimpleQuestion()
         {
@@ -37,10 +43,17 @@ public class AnimalFoodQuestionBank : SimpleQuestion
                 catSprite,
                 rabbitSprite
             },
+            answerOptions = new List<string>()
+            {
+                "dog",
+                "horse",
+                "cat",
+                "rabbit"
+            },
             tags = new List<string>()
-        {
+            {
             "animals", "food"
-        },
+            },
             size = 1
         };
 
@@ -49,12 +62,12 @@ public class AnimalFoodQuestionBank : SimpleQuestion
             number = 2,
             questionName = "meat",
             answer = "tiger",
-            answerOptions = new List<string>()
+            answerOptionsSprites = new List<Sprite>()
         {
-            "frog",
-            "rabbit",
-            "tiger",
-            "lion"
+                frogSprite,
+                lionSprite,
+                rabbitSprite,
+                tigerSprite
         },
             tags = new List<string>()
         {
@@ -144,7 +157,7 @@ public class AnimalFoodQuestionBank : SimpleQuestion
     {
         // if (GameControl.animalFood001known == false)
         questions.Add(animalFood001);
-        // questions.Add(animalFood002);
+        questions.Add(animalFood002);
         // questions.Add(animalFood003);
         // questions.Add(animalFood004);
         // questions.Add(animalFood005);

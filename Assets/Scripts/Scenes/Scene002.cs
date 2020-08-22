@@ -23,9 +23,9 @@ public class Scene002 : MonoBehaviour
         AnimalFoodQuestionBank.LoadQuestionList();
 
         answerText1 = GameObject.Find("Answer1Text").GetComponent<Text>();
-        // answerText2 = GameObject.Find("Answer2Text").GetComponent<Text>();
-        // answerText3 = GameObject.Find("Answer3Text").GetComponent<Text>();
-        // answerText4 = GameObject.Find("Answer4Text").GetComponent<Text>();
+        answerText2 = GameObject.Find("Answer2Text").GetComponent<Text>();
+        answerText3 = GameObject.Find("Answer3Text").GetComponent<Text>();
+        answerText4 = GameObject.Find("Answer4Text").GetComponent<Text>();
 
         answerImage1 = GameObject.Find("Answer 1").GetComponent<Image>();
         answerImage2 = GameObject.Find("Answer 2").GetComponent<Image>();
@@ -58,13 +58,22 @@ public class Scene002 : MonoBehaviour
         {
             Debug.Log(AnimalFoodQuestionBank.questions.Count);
 
+            answerImage1.color = Color.white;
+            answerImage2.color = Color.white;
+            answerImage3.color = Color.white;
+            answerImage4.color = Color.white;
+
             answerText1.text = null;
             fairyTalk.text = AnimalFoodQuestionBank.questions[0].questionName;
 
             answerImage1.sprite = AnimalFoodQuestionBank.questions[0].answerOptionsSprites[0];
+            answerText1.text = AnimalFoodQuestionBank.questions[0].answerOptions[0];
             answerImage2.sprite = AnimalFoodQuestionBank.questions[0].answerOptionsSprites[1];
+            answerText2.text = AnimalFoodQuestionBank.questions[0].answerOptions[1];
             answerImage3.sprite = AnimalFoodQuestionBank.questions[0].answerOptionsSprites[2];
+            answerText3.text = AnimalFoodQuestionBank.questions[0].answerOptions[2];
             answerImage4.sprite = AnimalFoodQuestionBank.questions[0].answerOptionsSprites[3];
+            answerText4.text = AnimalFoodQuestionBank.questions[0].answerOptions[3];
 
             questionNumber++;
         }

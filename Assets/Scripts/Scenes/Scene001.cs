@@ -69,6 +69,7 @@ public class Scene001 : MonoBehaviour
             {
                 correctAnswer = true;
                 MarkAsKnown();
+                SimpleSoundManager.playCorrectSound();
             }
             else
             {
@@ -91,6 +92,7 @@ public class Scene001 : MonoBehaviour
             {
                 correctAnswer = true;
                 MarkAsKnown();
+                SimpleSoundManager.playCorrectSound();
             }
             else
             {
@@ -113,6 +115,7 @@ public class Scene001 : MonoBehaviour
             {
                 correctAnswer = true;
                 MarkAsKnown();
+                SimpleSoundManager.playCorrectSound();
             }
             else
             {
@@ -135,6 +138,7 @@ public class Scene001 : MonoBehaviour
             {
                 correctAnswer = true;
                 MarkAsKnown();
+                SimpleSoundManager.playCorrectSound();
             }
             else
             {
