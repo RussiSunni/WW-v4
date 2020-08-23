@@ -9,8 +9,8 @@ public class SimpleSoundManager : MonoBehaviour
 
     void Start()
     {
-        incorrectSound = Resources.Load<AudioClip>("Sounds/incorrectSound");
-        correctSound = Resources.Load<AudioClip>("Sounds/correctSound");
+        incorrectSound = Resources.Load<AudioClip>("Sounds/incorrectSound2");
+        correctSound = Resources.Load<AudioClip>("Sounds/correctSound2");
         audioSrc = GetComponent<AudioSource>();
     }
     public static void playIncorrectSound()

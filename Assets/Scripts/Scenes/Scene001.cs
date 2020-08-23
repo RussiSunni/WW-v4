@@ -159,9 +159,7 @@ public class Scene001 : MonoBehaviour
                 AnimalNamesQuestionBank.questions.RemoveAt(questionNumber - 1);
             }
 
-            Debug.Log(AnimalNamesQuestionBank.questions.Count);
-
-            if (questionNumber < AnimalNamesQuestionBank.questions.Count)
+            else if (questionNumber < AnimalNamesQuestionBank.questions.Count)
             {
                 questionNumber++;
             }

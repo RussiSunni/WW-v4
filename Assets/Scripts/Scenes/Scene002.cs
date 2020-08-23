@@ -56,8 +56,6 @@ public class Scene002 : MonoBehaviour
 
         else if (questionNumber == 0)
         {
-            Debug.Log(AnimalFoodQuestionBank.questions.Count);
-
             answerImage1.color = Color.white;
             answerImage2.color = Color.white;
             answerImage3.color = Color.white;
@@ -173,22 +171,23 @@ public class Scene002 : MonoBehaviour
                 AnimalFoodQuestionBank.questions.RemoveAt(questionNumber - 1);
             }
 
-            Debug.Log(AnimalFoodQuestionBank.questions.Count);
-
-            if (questionNumber < AnimalFoodQuestionBank.questions.Count)
+            else if (questionNumber < AnimalFoodQuestionBank.questions.Count)
             {
                 questionNumber++;
             }
             else
                 questionNumber = 1;
 
-
             if (AnimalFoodQuestionBank.questions.Count > 0)
             {
                 fairyTalk.text = AnimalFoodQuestionBank.questions[questionNumber - 1].questionName;
+                answerImage1.sprite = AnimalFoodQuestionBank.questions[questionNumber - 1].answerOptionsSprites[0];
                 answerText1.text = AnimalFoodQuestionBank.questions[questionNumber - 1].answerOptions[0];
+                answerImage2.sprite = AnimalFoodQuestionBank.questions[questionNumber - 1].answerOptionsSprites[1];
                 answerText2.text = AnimalFoodQuestionBank.questions[questionNumber - 1].answerOptions[1];
+                answerImage3.sprite = AnimalFoodQuestionBank.questions[questionNumber - 1].answerOptionsSprites[2];
                 answerText3.text = AnimalFoodQuestionBank.questions[questionNumber - 1].answerOptions[2];
+                answerImage4.sprite = AnimalFoodQuestionBank.questions[questionNumber - 1].answerOptionsSprites[3];
                 answerText4.text = AnimalFoodQuestionBank.questions[questionNumber - 1].answerOptions[3];
             }
             else
@@ -202,14 +201,6 @@ public class Scene002 : MonoBehaviour
 
                 finished = true;
             }
-        }
-
-        // add Fairy feedback based on how well they do with animals
-        score = 0;
-
-        if (score == 20)
-        {
-            fairyTalk.text = "Wow, you really know this content";
         }
     }
 
@@ -327,28 +318,6 @@ public class Scene002 : MonoBehaviour
             ChangeQuestion();
             timerReady = false;
         }
-        if (AnimalNamesQuestionBank.questions.Count > 0 && questionNumber != 0)
-        {
-            if (AnimalNamesQuestionBank.questions[questionNumber - 1].size == 2)
-            {
-                RectTransform questionRT = questionImage.GetComponent(typeof(RectTransform)) as RectTransform;
-                questionRT.sizeDelta = new Vector2(800, 712);
-                questionRT.anchoredPosition = new Vector2(400, -356);
-
-                RectTransform fairyRT = fairyImage.GetComponent(typeof(RectTransform)) as RectTransform;
-                fairyRT.sizeDelta = new Vector2(250.7f, 446.4f);
-                fairyRT.anchoredPosition = new Vector2(274.7f, 223.2f);
-            }
-            else if (AnimalNamesQuestionBank.questions[questionNumber - 1].size == 1)
-            {
-                RectTransform questionRT = questionImage.GetComponent(typeof(RectTransform)) as RectTransform;
-                questionRT.sizeDelta = new Vector2(400, 712);
-                questionRT.anchoredPosition = new Vector2(200, -356);
-
-                RectTransform fairyRT = fairyImage.GetComponent(typeof(RectTransform)) as RectTransform;
-                fairyRT.sizeDelta = new Vector2(400f, 712f);
-                fairyRT.anchoredPosition = new Vector2(200f, 356.1402f);
-            }
-        }
+        Debug.Log(questionNumber);
     }
 }

@@ -32,8 +32,16 @@ public class GameControl : MonoBehaviour
                         animalName020known,
                         animalName021known,
                         animalName022known,
-                        animalName023known;
-
+                        animalName023known,
+                        animalName024known,
+                        animalName025known,
+                        animalName026known,
+                        animalName027known,
+                        animalName028known,
+                        animalName029known,
+                        animalName030known,
+                        animalName031known,
+                        animalName032known;
 
     void Awake()
     {
@@ -80,6 +88,16 @@ public class GameControl : MonoBehaviour
         data.animalName021known = animalName021known;
         data.animalName022known = animalName022known;
         data.animalName023known = animalName023known;
+        data.animalName024known = animalName024known;
+        data.animalName025known = animalName025known;
+        data.animalName026known = animalName026known;
+        data.animalName027known = animalName027known;
+        data.animalName028known = animalName028known;
+        data.animalName029known = animalName029known;
+        data.animalName030known = animalName030known;
+        data.animalName031known = animalName031known;
+        data.animalName032known = animalName032known;
+
 
         bf.Serialize(file, data);
         file.Close();
@@ -119,6 +137,15 @@ public class GameControl : MonoBehaviour
             animalName021known = data.animalName021known;
             animalName022known = data.animalName022known;
             animalName023known = data.animalName023known;
+            animalName024known = data.animalName024known;
+            animalName025known = data.animalName025known;
+            animalName026known = data.animalName026known;
+            animalName027known = data.animalName027known;
+            animalName028known = data.animalName028known;
+            animalName029known = data.animalName029known;
+            animalName030known = data.animalName030known;
+            animalName031known = data.animalName031known;
+            animalName032known = data.animalName032known;
         }
     }
 }
@@ -150,5 +177,14 @@ class PlayerData
     public bool animalName021known;
     public bool animalName022known;
     public bool animalName023known;
+    public bool animalName024known;
+    public bool animalName025known;
+    public bool animalName026known;
+    public bool animalName027known;
+    public bool animalName028known;
+    public bool animalName029known;
+    public bool animalName030known;
+    public bool animalName031known;
+    public bool animalName032known;
 }
 
