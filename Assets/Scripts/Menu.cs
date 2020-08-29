@@ -8,6 +8,7 @@ public class Menu : MonoBehaviour
 {
     Text results;
     int score, questionsCompleted;
+    string previousScene;
     void Start()
     {
         // score = PlayerPrefs.GetInt("cat") + PlayerPrefs.GetInt("dog") + PlayerPrefs.GetInt("horse") + PlayerPrefs.GetInt("bear") + PlayerPrefs.GetInt("wolf") + PlayerPrefs.GetInt("zebra")
@@ -36,7 +37,8 @@ public class Menu : MonoBehaviour
     }
     public void Resume()
     {
-        SceneManager.LoadScene("Scene001");
+        previousScene = GameControl.currentSceneName;
+        SceneManager.LoadScene(previousScene);
     }
     public void Quit()
     {

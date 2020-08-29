@@ -36,15 +36,20 @@ public class Scene001 : MonoBehaviour
         fairyTalk = GameObject.Find("FairyTalk").GetComponent<Text>();
 
 
-
-        fairyTalk.text = "Hi, learner. Let’s help the animals find their names.";
-        answerText1.text = "Start";
+        if (!GameControl.scene1Started)
+        {
+            fairyTalk.text = "Hi, learner. Let’s help the animals find their names.";
+            answerText1.text = "Start";
+        }
+        else
+            Answer1();
     }
 
     public void Answer1()
     {
         if (finished)
         {
+
             SceneManager.LoadScene("Scene002");
         }
 
@@ -58,6 +63,7 @@ public class Scene001 : MonoBehaviour
 
             fairyTalk.text = null;
             questionNumber++;
+            GameControl.scene1Started = true;
         }
         else
         {

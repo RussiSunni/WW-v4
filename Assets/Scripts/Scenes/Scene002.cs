@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Scene002 : MonoBehaviour
 {
+
     Image questionImage, fairyImage, answerImage1, answerImage2, answerImage3, answerImage4;
     private Sprite fairyIncorrect,
                    fairyNeutral,
@@ -19,6 +20,7 @@ public class Scene002 : MonoBehaviour
 
     void Start()
     {
+        Application.targetFrameRate = 15;
 
         AnimalFoodQuestionBank.LoadQuestionList();
 
@@ -43,8 +45,14 @@ public class Scene002 : MonoBehaviour
 
         fairyTalk = GameObject.Find("FairyTalk").GetComponent<Text>();
 
-        fairyTalk.text = "Learner, can you help the animal find their food? They will be very thankful if you do ☺.";
-        answerText1.text = "Start";
+        if (!GameControl.scene2Started)
+        {
+            fairyTalk.text = "Learner, can you help the animal find their food? They will be very thankful if you do ☺.";
+            answerText1.text = "Start";
+            SimpleSoundManager.playNextLevelSound();
+        }
+        else
+            Answer1();
     }
 
     public void Answer1()
@@ -74,6 +82,7 @@ public class Scene002 : MonoBehaviour
             answerText4.text = AnimalFoodQuestionBank.questions[0].answerOptions[3];
 
             questionNumber++;
+            GameControl.scene2Started = true;
         }
         else
         {

@@ -4,10 +4,13 @@ using UnityEngine;
 using System;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 public class GameControl : MonoBehaviour
 {
     public static GameControl control;
+    public static string currentSceneName;
+    public static bool scene1Started, scene2Started;
 
     public string playerName;
     public static bool animalName001known,
@@ -147,6 +150,11 @@ public class GameControl : MonoBehaviour
             animalName031known = data.animalName031known;
             animalName032known = data.animalName032known;
         }
+    }
+
+    public static void SavePreviousSceneName()
+    {
+        currentSceneName = SceneManager.GetActiveScene().name;
     }
 }
 
