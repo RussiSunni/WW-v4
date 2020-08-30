@@ -12,6 +12,7 @@ public class AnimalFoodQuestionBank : SimpleQuestion
     public static SimpleQuestion animalFood004 = new SimpleQuestion();
     public static SimpleQuestion animalFood005 = new SimpleQuestion();
     public static SimpleQuestion animalFood006 = new SimpleQuestion();
+    public static SimpleQuestion animalFood007 = new SimpleQuestion();
     private Sprite dogSprite,
                     horseSprite,
                     catSprite,
@@ -24,7 +25,9 @@ public class AnimalFoodQuestionBank : SimpleQuestion
                     monkeySprite,
                     chickenSprite,
                     parrotSprite,
-                    cowSprite;
+                    cowSprite,
+                    mouseSprite,
+                    dolphinSprite;
 
     void Start()
     {
@@ -42,12 +45,19 @@ public class AnimalFoodQuestionBank : SimpleQuestion
         chickenSprite = Resources.Load<Sprite>("Questions/Animals/Chicken");
         parrotSprite = Resources.Load<Sprite>("Questions/Animals/Parrot");
         cowSprite = Resources.Load<Sprite>("Questions/Animals/Cow");
+        mouseSprite = Resources.Load<Sprite>("Questions/Animals/Mouse");
+        dolphinSprite = Resources.Load<Sprite>("Questions/Animals/Dolphin");
 
         animalFood001 = new SimpleQuestion()
         {
             number = 1,
             questionName = "carrots",
-            answer = "horse",
+            answer = null,
+            answerList = new List<string>()
+        {
+            "horse",
+            "rabbit"
+        },
             answerOptionsSprites = new List<Sprite>()
             {
                 dogSprite,
@@ -73,7 +83,12 @@ public class AnimalFoodQuestionBank : SimpleQuestion
         {
             number = 2,
             questionName = "meat",
-            answer = "tiger",
+            answer = null,
+            answerList = new List<string>()
+        {
+            "tiger",
+            "lion"
+        },
             answerOptionsSprites = new List<Sprite>()
         {
                 frogSprite,
@@ -102,8 +117,8 @@ public class AnimalFoodQuestionBank : SimpleQuestion
             answer = "mouse",
             answerOptionsSprites = new List<Sprite>()
         {
-                null,
-                null,
+                mouseSprite,
+                dolphinSprite,
                 catSprite,
                 parrotSprite
         },
@@ -125,7 +140,12 @@ public class AnimalFoodQuestionBank : SimpleQuestion
         {
             number = 4,
             questionName = "grass",
-            answer = "cow",
+            answer = null,
+            answerList = new List<string>()
+        {
+            "cow",
+            "zebra"
+        },
             answerOptionsSprites = new List<Sprite>()
         {
                 zebraSprite,
@@ -157,7 +177,7 @@ public class AnimalFoodQuestionBank : SimpleQuestion
         {
                 elephantSprite,
                 chickenSprite,
-                null,
+                mouseSprite,
                 monkeySprite
         },
             answerOptions = new List<string>()
@@ -183,13 +203,39 @@ public class AnimalFoodQuestionBank : SimpleQuestion
         {
                 lionSprite,
                 dogSprite,
-                null,
+                mouseSprite,
                 monkeySprite
         },
             answerOptions = new List<string>()
         {
             "lion",
             "dog",
+            "mouse",
+            "monkey"
+        },
+            tags = new List<string>()
+        {
+            "animals", "food"
+        },
+            size = 1
+        };
+
+        animalFood007 = new SimpleQuestion()
+        {
+            number = 7,
+            questionName = "fish",
+            answer = "dolphin",
+            answerOptionsSprites = new List<Sprite>()
+        {
+                lionSprite,
+                dolphinSprite,
+                mouseSprite,
+                monkeySprite
+        },
+            answerOptions = new List<string>()
+        {
+            "lion",
+            "dolphin",
             "mouse",
             "monkey"
         },
@@ -209,6 +255,7 @@ public class AnimalFoodQuestionBank : SimpleQuestion
         questions.Add(animalFood004);
         questions.Add(animalFood005);
         questions.Add(animalFood006);
-        // questions = questions.OrderBy(x => System.Guid.NewGuid()).ToList();
+        questions.Add(animalFood007);
+        //questions = questions.OrderBy(x => System.Guid.NewGuid()).ToList();
     }
 }

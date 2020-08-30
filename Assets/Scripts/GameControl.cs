@@ -13,7 +13,8 @@ public class GameControl : MonoBehaviour
     public static bool scene1Started, scene2Started;
 
     public string playerName;
-    public static bool animalName001known,
+    public static bool
+                        animalName001known,
                         animalName002known,
                         animalName003known,
                         animalName004known,
@@ -44,7 +45,15 @@ public class GameControl : MonoBehaviour
                         animalName029known,
                         animalName030known,
                         animalName031known,
-                        animalName032known;
+                        animalName032known,
+
+                        animalFood001known,
+                        animalFood002known,
+                        animalFood003known,
+                        animalFood004known,
+                        animalFood005known,
+                        animalFood006known,
+                        animalFood007known;
 
     void Awake()
     {
@@ -68,6 +77,7 @@ public class GameControl : MonoBehaviour
 
         PlayerData data = new PlayerData();
         data.playerName = playerName;
+        data.scene2Started = scene2Started;
         data.animalName001known = animalName001known;
         data.animalName002known = animalName002known;
         data.animalName003known = animalName003known;
@@ -101,6 +111,14 @@ public class GameControl : MonoBehaviour
         data.animalName031known = animalName031known;
         data.animalName032known = animalName032known;
 
+        data.animalFood001known = animalFood001known;
+        data.animalFood002known = animalFood002known;
+        data.animalFood003known = animalFood003known;
+        data.animalFood004known = animalFood004known;
+        data.animalFood005known = animalFood005known;
+        data.animalFood006known = animalFood006known;
+        data.animalFood007known = animalFood007known;
+
 
         bf.Serialize(file, data);
         file.Close();
@@ -116,6 +134,7 @@ public class GameControl : MonoBehaviour
             file.Close();
 
             playerName = data.playerName;
+            scene2Started = data.scene2Started;
 
             animalName001known = data.animalName001known;
             animalName002known = data.animalName002known;
@@ -149,6 +168,14 @@ public class GameControl : MonoBehaviour
             animalName030known = data.animalName030known;
             animalName031known = data.animalName031known;
             animalName032known = data.animalName032known;
+
+            animalFood001known = data.animalFood001known;
+            animalFood002known = data.animalFood002known;
+            animalFood003known = data.animalFood003known;
+            animalFood004known = data.animalFood004known;
+            animalFood005known = data.animalFood005known;
+            animalFood006known = data.animalFood006known;
+            animalFood007known = data.animalFood007known;
         }
     }
 
@@ -162,6 +189,7 @@ public class GameControl : MonoBehaviour
 class PlayerData
 {
     public string playerName;
+    public bool scene2Started;
     public bool animalName001known;
     public bool animalName002known;
     public bool animalName003known;
@@ -194,5 +222,14 @@ class PlayerData
     public bool animalName030known;
     public bool animalName031known;
     public bool animalName032known;
+
+    public bool animalFood001known;
+    public bool animalFood002known;
+    public bool animalFood003known;
+    public bool animalFood004known;
+    public bool animalFood005known;
+    public bool animalFood006known;
+    public bool animalFood007known;
+
 }
 

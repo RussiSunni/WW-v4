@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Scene002 : MonoBehaviour
 {
+    Color transparentTextColor;
 
     Image questionImage, fairyImage, answerImage1, answerImage2, answerImage3, answerImage4;
     private Sprite fairyIncorrect,
@@ -22,6 +23,8 @@ public class Scene002 : MonoBehaviour
     {
         Application.targetFrameRate = 15;
 
+        transparentTextColor.a = 0.0f;
+
         AnimalFoodQuestionBank.LoadQuestionList();
 
         answerText1 = GameObject.Find("Answer1Text").GetComponent<Text>();
@@ -33,6 +36,7 @@ public class Scene002 : MonoBehaviour
         answerImage2 = GameObject.Find("Answer 2").GetComponent<Image>();
         answerImage3 = GameObject.Find("Answer 3").GetComponent<Image>();
         answerImage4 = GameObject.Find("Answer 4").GetComponent<Image>();
+
 
         questionImage = GetComponent<Image>();
 
@@ -64,12 +68,19 @@ public class Scene002 : MonoBehaviour
 
         else if (questionNumber == 0)
         {
+            answerImage1.type = Image.Type.Simple;
+            answerImage2.type = Image.Type.Simple;
+            answerImage3.type = Image.Type.Simple;
+            answerImage4.type = Image.Type.Simple;
+
             answerImage1.color = Color.white;
             answerImage2.color = Color.white;
             answerImage3.color = Color.white;
             answerImage4.color = Color.white;
 
-            answerText1.text = null;
+            fairyTalk.fontSize = 76;
+
+            answerText1.color = transparentTextColor;
             fairyTalk.text = AnimalFoodQuestionBank.questions[0].questionName;
 
             answerImage1.sprite = AnimalFoodQuestionBank.questions[0].answerOptionsSprites[0];
@@ -95,6 +106,14 @@ public class Scene002 : MonoBehaviour
                 correctAnswer = true;
                 MarkAsKnown();
             }
+
+            // list
+            else if (AnimalFoodQuestionBank.questions[questionNumber - 1].answerList.Contains(answerText1.text))
+            {
+                correctAnswer = true;
+                MarkAsKnown();
+            }
+
             else
             {
                 correctAnswer = false;
@@ -117,6 +136,14 @@ public class Scene002 : MonoBehaviour
                 correctAnswer = true;
                 MarkAsKnown();
             }
+
+            // list
+            else if (AnimalFoodQuestionBank.questions[questionNumber - 1].answerList.Contains(answerText2.text))
+            {
+                correctAnswer = true;
+                MarkAsKnown();
+            }
+
             else
             {
                 correctAnswer = false;
@@ -139,6 +166,14 @@ public class Scene002 : MonoBehaviour
                 correctAnswer = true;
                 MarkAsKnown();
             }
+
+            // list
+            else if (AnimalFoodQuestionBank.questions[questionNumber - 1].answerList.Contains(answerText3.text))
+            {
+                correctAnswer = true;
+                MarkAsKnown();
+            }
+
             else
             {
                 correctAnswer = false;
@@ -161,6 +196,14 @@ public class Scene002 : MonoBehaviour
                 correctAnswer = true;
                 MarkAsKnown();
             }
+
+            // list
+            else if (AnimalFoodQuestionBank.questions[questionNumber - 1].answerList.Contains(answerText4.text))
+            {
+                correctAnswer = true;
+                MarkAsKnown();
+            }
+
             else
             {
                 correctAnswer = false;
@@ -217,98 +260,35 @@ public class Scene002 : MonoBehaviour
     {
         // AnimalNamesQuestionBank.questions[questionNumber - 1].known = true;
 
-        // if (AnimalNamesQuestionBank.questions[questionNumber - 1].number == 1)
-        // {
-        //     GameControl.animalName001known = true;
-        // }
-        // else if (AnimalNamesQuestionBank.questions[questionNumber - 1].number == 2)
-        // {
-        //     GameControl.animalName002known = true;
-        // }
-        // else if (AnimalNamesQuestionBank.questions[questionNumber - 1].number == 3)
-        // {
-        //     GameControl.animalName003known = true;
-        // }
-        // if (AnimalNamesQuestionBank.questions[questionNumber - 1].number == 4)
-        // {
-        //     GameControl.animalName004known = true;
-        // }
-        // else if (AnimalNamesQuestionBank.questions[questionNumber - 1].number == 5)
-        // {
-        //     GameControl.animalName005known = true;
-        // }
-        // else if (AnimalNamesQuestionBank.questions[questionNumber - 1].number == 6)
-        // {
-        //     GameControl.animalName006known = true;
-        // }
-        // if (AnimalNamesQuestionBank.questions[questionNumber - 1].number == 7)
-        // {
-        //     GameControl.animalName007known = true;
-        // }
-        // else if (AnimalNamesQuestionBank.questions[questionNumber - 1].number == 8)
-        // {
-        //     GameControl.animalName008known = true;
-        // }
-        // else if (AnimalNamesQuestionBank.questions[questionNumber - 1].number == 9)
-        // {
-        //     GameControl.animalName009known = true;
-        // }
-        // if (AnimalNamesQuestionBank.questions[questionNumber - 1].number == 10)
-        // {
-        //     GameControl.animalName010known = true;
-        // }
-        // else if (AnimalNamesQuestionBank.questions[questionNumber - 1].number == 11)
-        // {
-        //     GameControl.animalName011known = true;
-        // }
-        // else if (AnimalNamesQuestionBank.questions[questionNumber - 1].number == 12)
-        // {
-        //     GameControl.animalName012known = true;
-        // }
-        // else if (AnimalNamesQuestionBank.questions[questionNumber - 1].number == 13)
-        // {
-        //     GameControl.animalName013known = true;
-        // }
-        // if (AnimalNamesQuestionBank.questions[questionNumber - 1].number == 14)
-        // {
-        //     GameControl.animalName014known = true;
-        // }
-        // else if (AnimalNamesQuestionBank.questions[questionNumber - 1].number == 15)
-        // {
-        //     GameControl.animalName015known = true;
-        // }
-        // else if (AnimalNamesQuestionBank.questions[questionNumber - 1].number == 16)
-        // {
-        //     GameControl.animalName016known = true;
-        // }
-        // if (AnimalNamesQuestionBank.questions[questionNumber - 1].number == 17)
-        // {
-        //     GameControl.animalName017known = true;
-        // }
-        // else if (AnimalNamesQuestionBank.questions[questionNumber - 1].number == 18)
-        // {
-        //     GameControl.animalName018known = true;
-        // }
-        // else if (AnimalNamesQuestionBank.questions[questionNumber - 1].number == 19)
-        // {
-        //     GameControl.animalName019known = true;
-        // }
-        // else if (AnimalNamesQuestionBank.questions[questionNumber - 1].number == 20)
-        // {
-        //     GameControl.animalName020known = true;
-        // }
-        // if (AnimalNamesQuestionBank.questions[questionNumber - 1].number == 21)
-        // {
-        //     GameControl.animalName021known = true;
-        // }
-        // else if (AnimalNamesQuestionBank.questions[questionNumber - 1].number == 22)
-        // {
-        //     GameControl.animalName022known = true;
-        // }
-        // else if (AnimalNamesQuestionBank.questions[questionNumber - 1].number == 23)
-        // {
-        //     GameControl.animalName023known = true;
-        // }
+        if (AnimalFoodQuestionBank.questions[questionNumber - 1].number == 1)
+        {
+            GameControl.animalFood001known = true;
+        }
+        else if (AnimalFoodQuestionBank.questions[questionNumber - 1].number == 2)
+        {
+            GameControl.animalFood001known = true;
+        }
+        else if (AnimalFoodQuestionBank.questions[questionNumber - 1].number == 3)
+        {
+            GameControl.animalFood001known = true;
+        }
+        if (AnimalFoodQuestionBank.questions[questionNumber - 1].number == 4)
+        {
+            GameControl.animalFood001known = true;
+        }
+        else if (AnimalFoodQuestionBank.questions[questionNumber - 1].number == 5)
+        {
+            GameControl.animalFood001known = true;
+        }
+        else if (AnimalFoodQuestionBank.questions[questionNumber - 1].number == 6)
+        {
+            GameControl.animalFood001known = true;
+        }
+        if (AnimalFoodQuestionBank.questions[questionNumber - 1].number == 7)
+        {
+            GameControl.animalFood001known = true;
+        }
+
     }
 
     void Update()

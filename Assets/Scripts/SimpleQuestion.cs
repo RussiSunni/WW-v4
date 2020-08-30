@@ -7,6 +7,7 @@ public class SimpleQuestion : MonoBehaviour
     public int number;
     public string questionName;
     public string answer;
+    public List<string> answerList = new List<string>();
     public Sprite sprite;
     public List<string> answerOptions = new List<string>();
     public List<Sprite> answerOptionsSprites = new List<Sprite>();

@@ -13,8 +13,18 @@ public class StartMenu : MonoBehaviour
     public void Load()
     {
         GameControl.control.Load();
-        SceneManager.LoadScene("Scene001");
 
-        AnimalNamesQuestionBank.LoadQuestionList();
+        if (!GameControl.scene2Started)
+        {
+            AnimalNamesQuestionBank.LoadQuestionList();
+            SceneManager.LoadScene("Scene001");
+        }
+        else
+        {
+            AnimalFoodQuestionBank.LoadQuestionList();
+            SceneManager.LoadScene("Scene002");
+        }
+
+
     }
 }
