@@ -67,10 +67,6 @@ public class Scene001 : MonoBehaviour
         }
         else
         {
-            timeRemaining = 1;
-
-            timerReady = true;
-
             if (AnimalNamesQuestionBank.questions[questionNumber - 1].questionName == answerText1.text)
             {
                 correctAnswer = true;
@@ -83,16 +79,14 @@ public class Scene001 : MonoBehaviour
                 SimpleSoundManager.playIncorrectSound();
             }
 
-            AnimalNamesQuestionBank.questions[questionNumber - 1].answered = true;
+            timeRemaining = 1;
+            timerReady = true;
         }
     }
     public void Answer2()
     {
         if (questionNumber != 0)
         {
-            timeRemaining = 1;
-
-            timerReady = true;
 
             if (AnimalNamesQuestionBank.questions[questionNumber - 1].questionName == answerText2.text)
             {
@@ -106,16 +100,14 @@ public class Scene001 : MonoBehaviour
                 SimpleSoundManager.playIncorrectSound();
             }
 
-            AnimalNamesQuestionBank.questions[questionNumber - 1].answered = true;
+            timeRemaining = 1;
+            timerReady = true;
         }
     }
     public void Answer3()
     {
         if (questionNumber != 0)
         {
-            timeRemaining = 1;
-
-            timerReady = true;
 
             if (AnimalNamesQuestionBank.questions[questionNumber - 1].questionName == answerText3.text)
             {
@@ -129,17 +121,14 @@ public class Scene001 : MonoBehaviour
                 SimpleSoundManager.playIncorrectSound();
             }
 
-            AnimalNamesQuestionBank.questions[questionNumber - 1].answered = true;
+            timeRemaining = 1;
+            timerReady = true;
         }
     }
     public void Answer4()
     {
         if (questionNumber != 0)
         {
-            timeRemaining = 1;
-
-            timerReady = true;
-
             if (AnimalNamesQuestionBank.questions[questionNumber - 1].questionName == answerText4.text)
             {
                 correctAnswer = true;
@@ -152,13 +141,16 @@ public class Scene001 : MonoBehaviour
                 SimpleSoundManager.playIncorrectSound();
             }
 
-            AnimalNamesQuestionBank.questions[questionNumber - 1].answered = true;
+            timeRemaining = 1;
+            timerReady = true;
         }
     }
     void ChangeQuestion()
     {
         if (timerReady == true)
         {
+            Debug.Log(questionNumber);
+            Debug.Log(AnimalNamesQuestionBank.questions.Count);
 
             if (correctAnswer == true)
             {
@@ -167,7 +159,9 @@ public class Scene001 : MonoBehaviour
 
             else if (questionNumber < AnimalNamesQuestionBank.questions.Count)
             {
-                questionNumber++;
+                // questionNumber++;
+                AnimalNamesQuestionBank.questions.Add(AnimalNamesQuestionBank.questions[0]);
+                AnimalNamesQuestionBank.questions.RemoveAt(0);
             }
             else
                 questionNumber = 1;

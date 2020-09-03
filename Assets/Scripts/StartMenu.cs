@@ -21,7 +21,7 @@ public class StartMenu : MonoBehaviour
         }
         else
         {
-            AnimalFoodQuestionBank.LoadQuestionList();
+            // AnimalFoodQuestionBank.LoadQuestionList();
             SceneManager.LoadScene("Scene002");
         }
 

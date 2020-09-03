@@ -52,6 +52,7 @@ public class AnimalFoodQuestionBank : SimpleQuestion
         {
             number = 1,
             questionName = "carrots",
+            fairyTalk = "Who likes carrots?",
             answer = null,
             answerList = new List<string>()
         {
@@ -83,6 +84,7 @@ public class AnimalFoodQuestionBank : SimpleQuestion
         {
             number = 2,
             questionName = "meat",
+            fairyTalk = "Who eats meat?",
             answer = null,
             answerList = new List<string>()
         {
@@ -114,6 +116,7 @@ public class AnimalFoodQuestionBank : SimpleQuestion
         {
             number = 3,
             questionName = "cheese",
+            fairyTalk = "Who eats cheese?",
             answer = "mouse",
             answerOptionsSprites = new List<Sprite>()
         {
@@ -140,6 +143,7 @@ public class AnimalFoodQuestionBank : SimpleQuestion
         {
             number = 4,
             questionName = "grass",
+            fairyTalk = "Who eats grass?",
             answer = null,
             answerList = new List<string>()
         {
@@ -172,6 +176,7 @@ public class AnimalFoodQuestionBank : SimpleQuestion
         {
             number = 5,
             questionName = "banana",
+            fairyTalk = "Who eats bananas?",
             answer = "monkey",
             answerOptionsSprites = new List<Sprite>()
         {
@@ -198,6 +203,7 @@ public class AnimalFoodQuestionBank : SimpleQuestion
         {
             number = 6,
             questionName = "bone",
+            fairyTalk = "Who eats bones?",
             answer = "dog",
             answerOptionsSprites = new List<Sprite>()
         {
@@ -224,6 +230,7 @@ public class AnimalFoodQuestionBank : SimpleQuestion
         {
             number = 7,
             questionName = "fish",
+            fairyTalk = "Who eats fish?",
             answer = "dolphin",
             answerOptionsSprites = new List<Sprite>()
         {
@@ -248,14 +255,27 @@ public class AnimalFoodQuestionBank : SimpleQuestion
     }
     public static void LoadQuestionList()
     {
-        // if (GameControl.animalFood001known == false)
-        questions.Add(animalFood001);
-        questions.Add(animalFood002);
-        questions.Add(animalFood003);
-        questions.Add(animalFood004);
-        questions.Add(animalFood005);
-        questions.Add(animalFood006);
-        questions.Add(animalFood007);
-        //questions = questions.OrderBy(x => System.Guid.NewGuid()).ToList();
+        if (GameControl.animalFood001known == false)
+            questions.Add(animalFood001);
+
+        if (GameControl.animalFood002known == false)
+            questions.Add(animalFood002);
+
+        if (GameControl.animalFood003known == false)
+            questions.Add(animalFood003);
+
+        if (GameControl.animalFood004known == false)
+            questions.Add(animalFood004);
+
+        if (GameControl.animalFood005known == false)
+            questions.Add(animalFood005);
+
+        if (GameControl.animalFood006known == false)
+            questions.Add(animalFood006);
+
+        if (GameControl.animalFood007known == false)
+            questions.Add(animalFood007);
+
+        questions = questions.OrderBy(x => System.Guid.NewGuid()).ToList();
     }
 }

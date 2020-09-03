@@ -81,7 +81,7 @@ public class Scene002 : MonoBehaviour
             fairyTalk.fontSize = 76;
 
             answerText1.color = transparentTextColor;
-            fairyTalk.text = AnimalFoodQuestionBank.questions[0].questionName;
+            fairyTalk.text = AnimalFoodQuestionBank.questions[0].fairyTalk;
 
             answerImage1.sprite = AnimalFoodQuestionBank.questions[0].answerOptionsSprites[0];
             answerText1.text = AnimalFoodQuestionBank.questions[0].answerOptions[0];
@@ -218,6 +218,8 @@ public class Scene002 : MonoBehaviour
         if (timerReady == true)
         {
 
+            Debug.Log(AnimalFoodQuestionBank.questions.Count);
+
             if (correctAnswer == true)
             {
                 AnimalFoodQuestionBank.questions.RemoveAt(questionNumber - 1);
@@ -225,14 +227,16 @@ public class Scene002 : MonoBehaviour
 
             else if (questionNumber < AnimalFoodQuestionBank.questions.Count)
             {
-                questionNumber++;
+                //questionNumber++;
+                AnimalFoodQuestionBank.questions.Add(AnimalFoodQuestionBank.questions[0]);
+                AnimalFoodQuestionBank.questions.RemoveAt(0);
             }
             else
                 questionNumber = 1;
 
             if (AnimalFoodQuestionBank.questions.Count > 0)
             {
-                fairyTalk.text = AnimalFoodQuestionBank.questions[questionNumber - 1].questionName;
+                fairyTalk.text = AnimalFoodQuestionBank.questions[questionNumber - 1].fairyTalk;
                 answerImage1.sprite = AnimalFoodQuestionBank.questions[questionNumber - 1].answerOptionsSprites[0];
                 answerText1.text = AnimalFoodQuestionBank.questions[questionNumber - 1].answerOptions[0];
                 answerImage2.sprite = AnimalFoodQuestionBank.questions[questionNumber - 1].answerOptionsSprites[1];
@@ -258,7 +262,7 @@ public class Scene002 : MonoBehaviour
 
     public void MarkAsKnown()
     {
-        // AnimalNamesQuestionBank.questions[questionNumber - 1].known = true;
+        //AnimalNamesQuestionBank.questions[questionNumber - 1].known = true;
 
         if (AnimalFoodQuestionBank.questions[questionNumber - 1].number == 1)
         {
@@ -266,27 +270,27 @@ public class Scene002 : MonoBehaviour
         }
         else if (AnimalFoodQuestionBank.questions[questionNumber - 1].number == 2)
         {
-            GameControl.animalFood001known = true;
+            GameControl.animalFood002known = true;
         }
         else if (AnimalFoodQuestionBank.questions[questionNumber - 1].number == 3)
         {
-            GameControl.animalFood001known = true;
+            GameControl.animalFood003known = true;
         }
         if (AnimalFoodQuestionBank.questions[questionNumber - 1].number == 4)
         {
-            GameControl.animalFood001known = true;
+            GameControl.animalFood004known = true;
         }
         else if (AnimalFoodQuestionBank.questions[questionNumber - 1].number == 5)
         {
-            GameControl.animalFood001known = true;
+            GameControl.animalFood005known = true;
         }
         else if (AnimalFoodQuestionBank.questions[questionNumber - 1].number == 6)
         {
-            GameControl.animalFood001known = true;
+            GameControl.animalFood006known = true;
         }
         if (AnimalFoodQuestionBank.questions[questionNumber - 1].number == 7)
         {
-            GameControl.animalFood001known = true;
+            GameControl.animalFood007known = true;
         }
 
     }
@@ -307,6 +311,6 @@ public class Scene002 : MonoBehaviour
             ChangeQuestion();
             timerReady = false;
         }
-        Debug.Log(questionNumber);
+
     }
 }

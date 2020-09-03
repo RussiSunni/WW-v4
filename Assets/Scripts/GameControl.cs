@@ -77,6 +77,7 @@ public class GameControl : MonoBehaviour
 
         PlayerData data = new PlayerData();
         data.playerName = playerName;
+        data.scene1Started = scene1Started;
         data.scene2Started = scene2Started;
         data.animalName001known = animalName001known;
         data.animalName002known = animalName002known;
@@ -134,6 +135,7 @@ public class GameControl : MonoBehaviour
             file.Close();
 
             playerName = data.playerName;
+            scene1Started = data.scene1Started;
             scene2Started = data.scene2Started;
 
             animalName001known = data.animalName001known;
@@ -189,6 +191,7 @@ public class GameControl : MonoBehaviour
 class PlayerData
 {
     public string playerName;
+    public bool scene1Started;
     public bool scene2Started;
     public bool animalName001known;
     public bool animalName002known;
