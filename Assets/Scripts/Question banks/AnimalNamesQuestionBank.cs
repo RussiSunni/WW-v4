@@ -38,9 +38,16 @@ public class AnimalNamesQuestionBank : SimpleQuestion
     public static SimpleQuestion animalName030 = new SimpleQuestion();
     public static SimpleQuestion animalName031 = new SimpleQuestion();
     public static SimpleQuestion animalName032 = new SimpleQuestion();
+    public static SimpleQuestion animalName033 = new SimpleQuestion();
+    public static SimpleQuestion animalName034 = new SimpleQuestion();
+    public static SimpleQuestion animalName035 = new SimpleQuestion();
+
 
     void Start()
     {
+
+
+
         animalName001 = new SimpleQuestion()
         {
             number = 1,
@@ -57,7 +64,8 @@ public class AnimalNamesQuestionBank : SimpleQuestion
         {
             "animals"
         },
-            size = 1
+            size = 1,
+            answerSound = "Cat"
         };
 
         animalName002 = new SimpleQuestion()
@@ -76,7 +84,8 @@ public class AnimalNamesQuestionBank : SimpleQuestion
         {
             "animals"
         },
-            size = 1
+            size = 1,
+            answerSound = "Dog"
         };
 
         animalName003 = new SimpleQuestion()
@@ -95,7 +104,8 @@ public class AnimalNamesQuestionBank : SimpleQuestion
         {
             "animals"
         },
-            size = 1
+            size = 1,
+            answerSound = "Horse"
         };
 
         animalName004 = new SimpleQuestion()
@@ -114,7 +124,8 @@ public class AnimalNamesQuestionBank : SimpleQuestion
         {
             "animals"
         },
-            size = 1
+            size = 1,
+            answerSound = "Bear"
         };
 
         animalName005 = new SimpleQuestion()
@@ -133,7 +144,8 @@ public class AnimalNamesQuestionBank : SimpleQuestion
         {
             "animals"
         },
-            size = 1
+            size = 1,
+            answerSound = "Wolf"
         };
 
         animalName006 = new SimpleQuestion()
@@ -152,7 +164,8 @@ public class AnimalNamesQuestionBank : SimpleQuestion
         {
             "animals"
         },
-            size = 1
+            size = 1,
+            answerSound = "Zebra"
         };
 
         animalName007 = new SimpleQuestion()
@@ -171,7 +184,8 @@ public class AnimalNamesQuestionBank : SimpleQuestion
         {
             "animals"
         },
-            size = 1
+            size = 1,
+            answerSound = "Owl"
         };
 
         animalName008 = new SimpleQuestion()
@@ -190,7 +204,8 @@ public class AnimalNamesQuestionBank : SimpleQuestion
         {
             "animals"
         },
-            size = 1
+            size = 1,
+            answerSound = "Monkey"
         };
 
         animalName009 = new SimpleQuestion()
@@ -209,7 +224,8 @@ public class AnimalNamesQuestionBank : SimpleQuestion
         {
             "animals"
         },
-            size = 1
+            size = 1,
+            answerSound = "Parrot"
         };
 
         animalName010 = new SimpleQuestion()
@@ -228,7 +244,8 @@ public class AnimalNamesQuestionBank : SimpleQuestion
         {
             "animals"
         },
-            size = 1
+            size = 1,
+            answerSound = "Giraffe"
         };
 
         animalName011 = new SimpleQuestion()
@@ -247,7 +264,8 @@ public class AnimalNamesQuestionBank : SimpleQuestion
         {
             "animals"
         },
-            size = 1
+            size = 1,
+            answerSound = "Lion"
         };
 
         animalName012 = new SimpleQuestion()
@@ -266,7 +284,8 @@ public class AnimalNamesQuestionBank : SimpleQuestion
         {
             "animals"
         },
-            size = 1
+            size = 1,
+            answerSound = "Crocodile"
         };
 
         animalName013 = new SimpleQuestion()
@@ -285,7 +304,8 @@ public class AnimalNamesQuestionBank : SimpleQuestion
         {
             "animals"
         },
-            size = 1
+            size = 1,
+            answerSound = "Cow"
         };
 
         animalName014 = new SimpleQuestion()
@@ -304,7 +324,8 @@ public class AnimalNamesQuestionBank : SimpleQuestion
         {
             "animals"
         },
-            size = 1
+            size = 1,
+            answerSound = "Duck"
         };
 
         animalName015 = new SimpleQuestion()
@@ -323,7 +344,8 @@ public class AnimalNamesQuestionBank : SimpleQuestion
         {
             "animals"
         },
-            size = 1
+            size = 1,
+            answerSound = "Pig"
         };
 
         animalName016 = new SimpleQuestion()
@@ -342,7 +364,8 @@ public class AnimalNamesQuestionBank : SimpleQuestion
         {
             "animals"
         },
-            size = 1
+            size = 1,
+            answerSound = "Donkey"
         };
 
         animalName017 = new SimpleQuestion()
@@ -361,7 +384,8 @@ public class AnimalNamesQuestionBank : SimpleQuestion
         {
             "animals"
         },
-            size = 1
+            size = 1,
+            answerSound = "Rabbit"
         };
 
         animalName018 = new SimpleQuestion()
@@ -380,7 +404,8 @@ public class AnimalNamesQuestionBank : SimpleQuestion
         {
             "animals"
         },
-            size = 1
+            size = 1,
+            answerSound = "Frog"
         };
 
         animalName019 = new SimpleQuestion()
@@ -399,7 +424,8 @@ public class AnimalNamesQuestionBank : SimpleQuestion
         {
             "animals"
         },
-            size = 1
+            size = 1,
+            answerSound = "Tiger"
         };
 
         animalName020 = new SimpleQuestion()
@@ -418,7 +444,8 @@ public class AnimalNamesQuestionBank : SimpleQuestion
         {
             "animals"
         },
-            size = 1
+            size = 1,
+            answerSound = "Goat"
         };
 
         animalName021 = new SimpleQuestion()
@@ -437,7 +464,8 @@ public class AnimalNamesQuestionBank : SimpleQuestion
         {
             "animals"
         },
-            size = 1
+            size = 1,
+            answerSound = "Chicken"
         };
 
         animalName022 = new SimpleQuestion()
@@ -456,7 +484,8 @@ public class AnimalNamesQuestionBank : SimpleQuestion
         {
             "animals"
         },
-            size = 1
+            size = 1,
+            answerSound = "Elephant"
         };
 
         animalName023 = new SimpleQuestion()
@@ -475,7 +504,8 @@ public class AnimalNamesQuestionBank : SimpleQuestion
         {
             "animals"
         },
-            size = 1
+            size = 1,
+            answerSound = "Lizard"
         };
 
         animalName024 = new SimpleQuestion()
@@ -494,7 +524,8 @@ public class AnimalNamesQuestionBank : SimpleQuestion
         {
             "animals"
         },
-            size = 1
+            size = 1,
+            answerSound = "Bat"
         };
 
         animalName025 = new SimpleQuestion()
@@ -513,7 +544,8 @@ public class AnimalNamesQuestionBank : SimpleQuestion
         {
             "animals"
         },
-            size = 1
+            size = 1,
+            answerSound = "Eagle"
         };
 
         animalName026 = new SimpleQuestion()
@@ -532,7 +564,8 @@ public class AnimalNamesQuestionBank : SimpleQuestion
         {
             "animals"
         },
-            size = 1
+            size = 1,
+            answerSound = "Kangaroo"
         };
 
         animalName027 = new SimpleQuestion()
@@ -551,7 +584,8 @@ public class AnimalNamesQuestionBank : SimpleQuestion
         {
             "animals"
         },
-            size = 1
+            size = 1,
+            answerSound = "Panda"
         };
 
         animalName028 = new SimpleQuestion()
@@ -570,7 +604,8 @@ public class AnimalNamesQuestionBank : SimpleQuestion
         {
             "animals"
         },
-            size = 1
+            size = 1,
+            answerSound = "Penguin"
         };
 
         animalName029 = new SimpleQuestion()
@@ -589,7 +624,8 @@ public class AnimalNamesQuestionBank : SimpleQuestion
         {
             "animals"
         },
-            size = 1
+            size = 1,
+            answerSound = "Sheep"
         };
 
         animalName030 = new SimpleQuestion()
@@ -608,7 +644,8 @@ public class AnimalNamesQuestionBank : SimpleQuestion
         {
             "animals"
         },
-            size = 1
+            size = 1,
+            answerSound = "Snake"
         };
 
         animalName031 = new SimpleQuestion()
@@ -627,7 +664,8 @@ public class AnimalNamesQuestionBank : SimpleQuestion
         {
             "animals"
         },
-            size = 1
+            size = 1,
+            answerSound = "Swan"
         };
 
         animalName032 = new SimpleQuestion()
@@ -646,7 +684,68 @@ public class AnimalNamesQuestionBank : SimpleQuestion
         {
             "animals"
         },
-            size = 1
+            size = 1,
+            answerSound = "Tortoise"
+        };
+
+        animalName033 = new SimpleQuestion()
+        {
+            number = 33,
+            questionName = "shark",
+            sprite = Resources.Load<Sprite>("Questions/Animals/Shark"),
+            answerOptions = new List<string>()
+        {
+            "shark",
+            "panda",
+            "swan",
+            "sheep"
+        },
+            tags = new List<string>()
+        {
+            "animals"
+        },
+            size = 1,
+            answerSound = "Shark"
+        };
+
+        animalName034 = new SimpleQuestion()
+        {
+            number = 34,
+            questionName = "dolphin",
+            sprite = Resources.Load<Sprite>("Questions/Animals/Dolphin"),
+            answerOptions = new List<string>()
+        {
+            "shark",
+            "panda",
+            "swan",
+            "dolphin"
+        },
+            tags = new List<string>()
+        {
+            "animals"
+        },
+            size = 1,
+            answerSound = "Dolphin"
+        };
+
+        animalName035 = new SimpleQuestion()
+        {
+            number = 35,
+            questionName = "mouse",
+            sprite = Resources.Load<Sprite>("Questions/Animals/Mouse"),
+            answerOptions = new List<string>()
+        {
+            "shark",
+            "panda",
+            "mouse",
+            "dolphin"
+        },
+            tags = new List<string>()
+        {
+            "animals"
+        },
+            size = 1,
+            answerSound = "Mouse"
         };
     }
 
@@ -747,6 +846,15 @@ public class AnimalNamesQuestionBank : SimpleQuestion
 
         if (!GameControl.animalName032known)
             questions.Add(animalName032);
+
+        if (!GameControl.animalName033known)
+            questions.Add(animalName033);
+
+        if (!GameControl.animalName034known)
+            questions.Add(animalName034);
+
+        if (!GameControl.animalName035known)
+            questions.Add(animalName035);
 
         questions = questions.OrderBy(x => System.Guid.NewGuid()).ToList();
 

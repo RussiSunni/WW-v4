@@ -23,22 +23,20 @@ public class Scene001 : MonoBehaviour
         answerText2 = GameObject.Find("Answer2Text").GetComponent<Text>();
         answerText3 = GameObject.Find("Answer3Text").GetComponent<Text>();
         answerText4 = GameObject.Find("Answer4Text").GetComponent<Text>();
-
         questionImage = GetComponent<Image>();
-
         fairyImage = GameObject.Find("Fairy").GetComponent<Image>();
+        fairyTalk = GameObject.Find("FairyTalk").GetComponent<Text>();
+
         fairyIncorrect = Resources.Load<Sprite>("FairyIncorrect");
         fairyNeutral = Resources.Load<Sprite>("FairyNeutral");
         fairyCorrect = Resources.Load<Sprite>("FairyCorrect");
 
         timerReady = false;
 
-        fairyTalk = GameObject.Find("FairyTalk").GetComponent<Text>();
-
-
         if (!GameControl.scene1Started)
         {
             fairyTalk.text = "Hi, learner. Let’s help the animals find their names.";
+            SimpleSoundManager.playScene1Intro();
             answerText1.text = "Start";
         }
         else
@@ -71,7 +69,7 @@ public class Scene001 : MonoBehaviour
             {
                 correctAnswer = true;
                 MarkAsKnown();
-                SimpleSoundManager.playCorrectSound();
+                SimpleSoundManager.playAnswerSound(AnimalNamesQuestionBank.questions[questionNumber - 1].answerSound);
             }
             else
             {
@@ -92,7 +90,7 @@ public class Scene001 : MonoBehaviour
             {
                 correctAnswer = true;
                 MarkAsKnown();
-                SimpleSoundManager.playCorrectSound();
+                SimpleSoundManager.playAnswerSound(AnimalNamesQuestionBank.questions[questionNumber - 1].answerSound);
             }
             else
             {
@@ -113,7 +111,7 @@ public class Scene001 : MonoBehaviour
             {
                 correctAnswer = true;
                 MarkAsKnown();
-                SimpleSoundManager.playCorrectSound();
+                SimpleSoundManager.playAnswerSound(AnimalNamesQuestionBank.questions[questionNumber - 1].answerSound);
             }
             else
             {
@@ -133,7 +131,7 @@ public class Scene001 : MonoBehaviour
             {
                 correctAnswer = true;
                 MarkAsKnown();
-                SimpleSoundManager.playCorrectSound();
+                SimpleSoundManager.playAnswerSound(AnimalNamesQuestionBank.questions[questionNumber - 1].answerSound);
             }
             else
             {
@@ -149,8 +147,8 @@ public class Scene001 : MonoBehaviour
     {
         if (timerReady == true)
         {
-            Debug.Log(questionNumber);
-            Debug.Log(AnimalNamesQuestionBank.questions.Count);
+            // Debug.Log(questionNumber);
+            //  Debug.Log(AnimalNamesQuestionBank.questions.Count);
 
             if (correctAnswer == true)
             {
@@ -165,7 +163,6 @@ public class Scene001 : MonoBehaviour
             }
             else
                 questionNumber = 1;
-
 
             if (AnimalNamesQuestionBank.questions.Count > 0)
             {

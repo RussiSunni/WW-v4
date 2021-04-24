@@ -1082,6 +1082,7 @@ MonoBehaviour:
   number: 0
   questionName: 
   answer: 
+  fairyTalk: 
   answerList: []
   sprite: {fileID: 0}
   answerOptions: []

@@ -16,4 +16,5 @@ public class SimpleQuestion : MonoBehaviour
     public int size;
     public bool answered;
     public bool known;
+    public string answerSound;
 }

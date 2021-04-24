@@ -8,7 +8,7 @@ public class SimpleLoadMenu : MonoBehaviour, IPointerClickHandler
 {
     public void OnPointerClick(PointerEventData eventData)
     {
-        GameControl.SavePreviousSceneName();
+        // GameControl.SavePreviousSceneName();
         SceneManager.LoadScene("Menu");
     }
 }

@@ -14,12 +14,27 @@ public class AnimalActionsQuestionBank : SimpleQuestion
     public static SimpleQuestion animalActions008 = new SimpleQuestion();
     public static SimpleQuestion animalActions009 = new SimpleQuestion();
 
+    private Sprite tortoiseSprite,
+                lizardSprite,
+                mouseSprite,
+                antSprite,
+                snailSprite,
+                rabbitSprite;
+
     void Start()
     {
+        // sprites
+
+        rabbitSprite = Resources.Load<Sprite>("Questions/Animals/Rabbit");
+        mouseSprite = Resources.Load<Sprite>("Questions/Animals/Mouse");
+        tortoiseSprite = Resources.Load<Sprite>("Questions/Animals/Tortoise");
+        lizardSprite = Resources.Load<Sprite>("Questions/Animals/Lizard");
+
         animalActions001 = new SimpleQuestion()
         {
             number = 1,
             questionName = "shark",
+            sprite = Resources.Load<Sprite>("Questions/Animals/Shark"),
             fairyTalk = "A shark",
             answer = "swims",
             answerOptions = new List<string>()
@@ -40,6 +55,7 @@ public class AnimalActionsQuestionBank : SimpleQuestion
         {
             number = 2,
             questionName = "parrot",
+            sprite = Resources.Load<Sprite>("Questions/Animals/Parrot"),
             fairyTalk = "A parrot can",
             answer = "fly",
             answerOptions = new List<string>()
@@ -60,8 +76,15 @@ public class AnimalActionsQuestionBank : SimpleQuestion
         {
             number = 3,
             questionName = "walk",
+            sprite = Resources.Load<Sprite>("Questions/Verbs/Walking"),
             fairyTalk = "Who walks?",
             answer = "tortoise",
+            answerOptionsSprites = new List<Sprite>()
+            {
+                tortoiseSprite,
+                lizardSprite,
+                mouseSprite
+            },
             answerOptions = new List<string>()
             {
                 "tortoise",
@@ -85,6 +108,7 @@ public class AnimalActionsQuestionBank : SimpleQuestion
         {
             number = 4,
             questionName = "penguin",
+            sprite = Resources.Load<Sprite>("Questions/Animals/Penguin"),
             fairyTalk = "I am a bird, but I can not",
             answer = "fly",
             answerOptions = new List<string>()
@@ -106,8 +130,15 @@ public class AnimalActionsQuestionBank : SimpleQuestion
         {
             number = 6,
             questionName = "hop",
+            sprite = Resources.Load<Sprite>("Questions/Verbs/Hopping"),
             fairyTalk = "Who hops?",
             answer = "rabbit",
+            answerOptionsSprites = new List<Sprite>()
+            {
+                antSprite,
+                snailSprite,
+                rabbitSprite
+            },
             answerOptions = new List<string>()
             {
                 "rabbit",
@@ -127,6 +158,7 @@ public class AnimalActionsQuestionBank : SimpleQuestion
         {
             number = 7,
             questionName = "kangaroo",
+            sprite = Resources.Load<Sprite>("Questions/Animals/Kangaroo"),
             fairyTalk = "I am a kangaroo. I can",
             answer = "jump",
             answerOptions = new List<string>()
@@ -146,13 +178,17 @@ public class AnimalActionsQuestionBank : SimpleQuestion
         // kangaroo joke
 
         // Fairy talk: "Fairy: now you have to choose two correct answers."
-
-
     }
 
     public static void LoadQuestionList()
     {
         questions.Add(animalActions001);
+        questions.Add(animalActions002);
+        questions.Add(animalActions003);
+        questions.Add(animalActions004);
+        questions.Add(animalActions005);
+        questions.Add(animalActions006);
+        questions.Add(animalActions007);
 
         //questions = questions.OrderBy(x => System.Guid.NewGuid()).ToList();
     }

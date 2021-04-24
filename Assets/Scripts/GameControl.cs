@@ -10,7 +10,7 @@ public class GameControl : MonoBehaviour
 {
     public static GameControl control;
     public static string currentSceneName;
-    public static bool scene1Started, scene2Started;
+    public static bool scene1Started, scene2Started, scene3Started;
 
     public string playerName;
     public static bool
@@ -46,6 +46,9 @@ public class GameControl : MonoBehaviour
                         animalName030known,
                         animalName031known,
                         animalName032known,
+                                                animalName033known,
+                        animalName034known,
+                        animalName035known,
 
                         animalFood001known,
                         animalFood002known,
@@ -79,6 +82,7 @@ public class GameControl : MonoBehaviour
         data.playerName = playerName;
         data.scene1Started = scene1Started;
         data.scene2Started = scene2Started;
+        data.scene3Started = scene3Started;
         data.animalName001known = animalName001known;
         data.animalName002known = animalName002known;
         data.animalName003known = animalName003known;
@@ -111,6 +115,9 @@ public class GameControl : MonoBehaviour
         data.animalName030known = animalName030known;
         data.animalName031known = animalName031known;
         data.animalName032known = animalName032known;
+        data.animalName033known = animalName033known;
+        data.animalName034known = animalName034known;
+        data.animalName035known = animalName035known;
 
         data.animalFood001known = animalFood001known;
         data.animalFood002known = animalFood002known;
@@ -135,56 +142,10 @@ public class GameControl : MonoBehaviour
             file.Close();
 
             playerName = data.playerName;
-            scene1Started = data.scene1Started;
-            scene2Started = data.scene2Started;
-
-            animalName001known = data.animalName001known;
-            animalName002known = data.animalName002known;
-            animalName003known = data.animalName003known;
-            animalName004known = data.animalName004known;
-            animalName005known = data.animalName005known;
-            animalName006known = data.animalName006known;
-            animalName007known = data.animalName007known;
-            animalName008known = data.animalName008known;
-            animalName009known = data.animalName009known;
-            animalName010known = data.animalName010known;
-            animalName011known = data.animalName011known;
-            animalName012known = data.animalName012known;
-            animalName013known = data.animalName013known;
-            animalName014known = data.animalName014known;
-            animalName015known = data.animalName015known;
-            animalName016known = data.animalName016known;
-            animalName017known = data.animalName017known;
-            animalName018known = data.animalName018known;
-            animalName019known = data.animalName019known;
-            animalName020known = data.animalName020known;
-            animalName021known = data.animalName021known;
-            animalName022known = data.animalName022known;
-            animalName023known = data.animalName023known;
-            animalName024known = data.animalName024known;
-            animalName025known = data.animalName025known;
-            animalName026known = data.animalName026known;
-            animalName027known = data.animalName027known;
-            animalName028known = data.animalName028known;
-            animalName029known = data.animalName029known;
-            animalName030known = data.animalName030known;
-            animalName031known = data.animalName031known;
-            animalName032known = data.animalName032known;
-
-            animalFood001known = data.animalFood001known;
-            animalFood002known = data.animalFood002known;
-            animalFood003known = data.animalFood003known;
-            animalFood004known = data.animalFood004known;
-            animalFood005known = data.animalFood005known;
-            animalFood006known = data.animalFood006known;
-            animalFood007known = data.animalFood007known;
         }
     }
 
-    public static void SavePreviousSceneName()
-    {
-        currentSceneName = SceneManager.GetActiveScene().name;
-    }
+
 }
 
 [Serializable]
@@ -193,6 +154,7 @@ class PlayerData
     public string playerName;
     public bool scene1Started;
     public bool scene2Started;
+    public bool scene3Started;
     public bool animalName001known;
     public bool animalName002known;
     public bool animalName003known;
@@ -225,6 +187,9 @@ class PlayerData
     public bool animalName030known;
     public bool animalName031known;
     public bool animalName032known;
+    public bool animalName033known;
+    public bool animalName034known;
+    public bool animalName035known;
 
     public bool animalFood001known;
     public bool animalFood002known;
