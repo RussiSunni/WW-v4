@@ -45,9 +45,6 @@ public class AnimalNamesQuestionBank : SimpleQuestion
 
     void Start()
     {
-
-
-
         animalName001 = new SimpleQuestion()
         {
             number = 1,

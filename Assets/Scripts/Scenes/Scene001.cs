@@ -47,10 +47,8 @@ public class Scene001 : MonoBehaviour
     {
         if (finished)
         {
-
             SceneManager.LoadScene("Scene002");
         }
-
         else if (questionNumber == 0)
         {
             questionImage.sprite = AnimalNamesQuestionBank.questions[0].sprite;
