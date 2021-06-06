@@ -7,9 +7,12 @@ public class StartMenu : MonoBehaviour
 {
     public void StartGame()
     {
-        SceneManager.LoadScene("Scene001");
-        AnimalNamesQuestionBank.LoadQuestionList();
+
+        SceneManager.LoadScene("Map");
     }
+
+
+
     public void Load()
     {
         GameControl.control.Load();
@@ -24,7 +27,5 @@ public class StartMenu : MonoBehaviour
             // AnimalFoodQuestionBank.LoadQuestionList();
             SceneManager.LoadScene("Scene002");
         }
-
-
     }
 }
