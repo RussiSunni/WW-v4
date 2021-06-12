@@ -5,13 +5,19 @@ using UnityEngine;
 public class SimpleSoundManager : MonoBehaviour
 {
     public static AudioClip incorrectSound, correctSound, nextLevelSound, answerSound, scene1Intro, scene2Intro;
+    public static AudioClip forest001Q001, forest001Q002, forest001Q003, forest001Q004;
     static AudioSource audioSrc;
+
 
     void Start()
     {
         incorrectSound = Resources.Load<AudioClip>("Sounds/incorrectSound2");
         correctSound = Resources.Load<AudioClip>("");
         nextLevelSound = Resources.Load<AudioClip>("Sounds/nextLevel");
+        forest001Q001 = Resources.Load<AudioClip>("Sounds/Forest/01/hello");
+        forest001Q002 = Resources.Load<AudioClip>("Sounds/Forest/01/welcome_to_my_forest");
+        forest001Q003 = Resources.Load<AudioClip>("Sounds/Forest/01/can_you_help_me");
+        forest001Q004 = Resources.Load<AudioClip>("Sounds/Forest/01/please_tell_me_the_names_of_the_animals");
 
         // answers
         // animals
@@ -54,5 +60,10 @@ public class SimpleSoundManager : MonoBehaviour
     {
         scene2Intro = Resources.Load<AudioClip>("Sounds/Scene002Intro");
         audioSrc.PlayOneShot(scene2Intro);
+    }
+
+    public static void PlaySound(AudioClip sound)
+    {
+        audioSrc.PlayOneShot(sound);
     }
 }

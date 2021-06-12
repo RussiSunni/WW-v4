@@ -46,6 +46,7 @@
      <Compile Include="Assets\Scripts\Question banks\CommunicationsAndTechnologyQuestionBank.cs" />
      <Compile Include="Assets\Scripts\Question banks\FamilyQuestionBank.cs" />
      <Compile Include="Assets\Scripts\Question banks\VerbsQuestionBank.cs" />
+     <Compile Include="Assets\Scripts\Scenes\Forest001.cs" />
      <Compile Include="Assets\Scripts\Scenes\Scene001.cs" />
      <Compile Include="Assets\Scripts\Scenes\Scene002.cs" />
      <Compile Include="Assets\Scripts\Scenes\Scene003.cs" />

@@ -6,10 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class Scene001 : MonoBehaviour
 {
-    Image questionImage, fairyImage;
+    public Image questionImage, fairyImage;
     private Sprite fairyIncorrect,
                    fairyNeutral,
                    fairyCorrect;
+
+    public Sprite artemisSprite, artemisCorrect;
     int questionNumber = 0;
     Text answerText1, answerText2, answerText3, answerText4;
     public float timeRemaining = 0;
@@ -23,7 +25,6 @@ public class Scene001 : MonoBehaviour
         answerText2 = GameObject.Find("Answer2Text").GetComponent<Text>();
         answerText3 = GameObject.Find("Answer3Text").GetComponent<Text>();
         answerText4 = GameObject.Find("Answer4Text").GetComponent<Text>();
-        questionImage = GetComponent<Image>();
         fairyImage = GameObject.Find("Fairy").GetComponent<Image>();
         fairyTalk = GameObject.Find("FairyTalk").GetComponent<Text>();
 
@@ -33,14 +34,16 @@ public class Scene001 : MonoBehaviour
 
         timerReady = false;
 
-        if (!GameControl.scene1Started)
-        {
-            fairyTalk.text = "Hi, learner. Let’s help the animals find their names.";
-            SimpleSoundManager.playScene1Intro();
-            answerText1.text = "Start";
-        }
-        else
-            Answer1();
+        // if (!GameControl.scene1Started)
+        // {
+        //  fairyTalk.text = "Hi, learner. Let’s help the animals find their names.";
+        //   SimpleSoundManager.playScene1Intro();
+        //  answerText1.text = "Start";
+        //  }
+        // else
+        Answer1();
+
+        //print(AnimalNamesQuestionBank.questions[0].answerOptions[0]);
     }
 
     public void Answer1()
@@ -296,13 +299,14 @@ public class Scene001 : MonoBehaviour
         {
             timeRemaining -= Time.deltaTime;
             if (correctAnswer)
-                fairyImage.sprite = fairyCorrect;
+                fairyImage.sprite = artemisCorrect;
             else
                 fairyImage.sprite = fairyIncorrect;
         }
         else
         {
-            fairyImage.sprite = fairyNeutral;
+            // fairyImage.sprite = fairyNeutral;
+            fairyImage.sprite = artemisSprite;
             ChangeQuestion();
             timerReady = false;
         }
