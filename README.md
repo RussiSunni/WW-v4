@@ -1,4 +1,4 @@
-# V4  
+# Simple Vocab Game
 Simple multiple choice game, testing vocab words.<br/>
 [Playable version](http://version-four.s3-website-us-east-1.amazonaws.com/)
 
